@@ -1,0 +1,26 @@
+__pycache__/
+venv/
+env/
+vi/
+iv/
+
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+# Ignore .env file
+.env
+.vscode
+
+.DS_Store
+
+semis_backend/
+user/migrations
+wallet/migrations
+investment/migrations
+admin/migrations
+
+
