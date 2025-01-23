@@ -85,6 +85,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Add your frontend domain
     "http://localhost:5173",
     "http://localhost:5174",
+    "https://inventory-backend-so86.onrender.com",
 ]
 
 
@@ -95,7 +96,6 @@ CORS_ORIGIN_WHITELIST = [
         "http://localhost:3000",  
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://inventory-backend-so86.onrender.com",
     ]
 
 CORS_ALLOW_METHODS = (
