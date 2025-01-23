@@ -105,7 +105,9 @@ CORS_ALLOW_METHODS = (
     "POST",
     "PUT",
 )
-ALLOWED_HOSTS.append("inventory-backend-so86.onrender.com")
+
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'nventory-backend-so86.onrender.com']
+
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
