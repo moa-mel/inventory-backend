@@ -30,6 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+DEPLOYMENT_STATE = "testing"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -81,24 +83,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "dev.wsgi.application"
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Add your frontend domain
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "https://inventory-backend-so86.onrender.com",
-]
-
-
-CORS_ALLOW_ALL_ORIGINS = True # This is only for testing (staging)
+if DEPLOYMENT_STATE == "testing":
+    CORS_ALLOW_ALL_ORIGINS = True # This is only for testing (staging)
     
-   
-CORS_ORIGIN_WHITELIST = [
-        "http://localhost:3000",  
+else:    
+    CORS_ORIGIN_WHITELIST = [
+         "http://localhost:3000",  
     "http://localhost:5173",
     "http://localhost:5174",
     "https://inventory-backend-so86.onrender.com",
     ]
-
 CORS_ALLOW_METHODS = (
     "DELETE",
     "GET",
@@ -107,6 +101,19 @@ CORS_ALLOW_METHODS = (
     "POST",
     "PUT",
 )
+
+CORS_ALLOW_CREDENTIALS = True
+# CSRF_COOKIE_SECURE = True
+
+# X_FRAME_OPTIONS = 'ALLOW-FROM https://semi-staging-test-be-1.onrender.com'
+
+CSRF_TRUSTED_ORIGINS = [
+     "http://localhost:3000",  
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://inventory-backend-so86.onrender.com",
+]
+
 ALLOWED_HOSTS.append("inventory-backend-so86.onrender.com")
 ALLOWED_HOSTS.append("0.0.0.0")
 ALLOWED_HOSTS.append("localhost")
